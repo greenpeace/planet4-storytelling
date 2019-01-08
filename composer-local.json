@@ -3,7 +3,7 @@
 	"description": "Greenpeace P4 Storytelling",
 	"license": "MIT",
 	"require": {
-		"greenpeace/planet4-child-theme-storytelling" : "develop"
+		"greenpeace/planet4-child-theme-storytelling" : "0.0.1"
 	},
 	"scripts": {
 		"site:custom" : []

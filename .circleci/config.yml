@@ -50,10 +50,10 @@ job_definitions:
           docker_layer_caching: true
       - restore_cache:
           keys:
-            - composer-v5-{{ .Branch }}-{{ .Revision }}-{{ .BuildNum }}
-            - composer-v5-{{ .Branch }}-{{ .Revision }}
-            - composer-v5-{{ .Branch }}
-            - composer-v5
+            - composer-v6-{{ .Branch }}-{{ .Revision }}-{{ .BuildNum }}
+            - composer-v6-{{ .Branch }}-{{ .Revision }}
+            - composer-v6-{{ .Branch }}
+            - composer-v6
       - run: |
           if [[ -d source/cache ]]; then ls -al source/cache; fi
       - run: activate-gcloud-account.sh

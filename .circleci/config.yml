@@ -28,6 +28,8 @@ job_environments:
     NEWRELIC_APPNAME: P4 Storytelling Development
     WP_DB_NAME: planet4-storytel_wordpress_develop
     WP_STATELESS_BUCKET: planet4-storytelling-stateless-develop
+  release_build_env: &release_build_env
+    GOOGLE_PROJECT_ID: planet4-production
   release_environment: &release_environment
     APP_ENVIRONMENT: staging
     APP_HOSTNAME: release.storytelling.greenpeace.org

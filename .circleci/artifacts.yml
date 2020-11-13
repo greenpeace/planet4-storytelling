@@ -1,11 +1,11 @@
 job_environments:
   common_environment: &common_environment
     CONTAINER_PREFIX: planet4-storytelling
-    APP_HOSTPATH:
     WP_DB_NAME_PREFIX: planet4-storytel_wordpress
   develop_environment: &develop_environment
     APP_ENVIRONMENT: development
-    APP_HOSTNAME: develop.storytelling.greenpeace.org
+    APP_HOSTNAME: www-dev.greenpeace.org
+    APP_HOSTPATH: storytelling
     CLOUDSQL_INSTANCE: p4-develop-k8s
     GOOGLE_PROJECT_ID: planet-4-151612
     GCLOUD_CLUSTER: p4-development
@@ -18,7 +18,8 @@ job_environments:
     GOOGLE_PROJECT_ID: planet4-production
   release_environment: &release_environment
     APP_ENVIRONMENT: staging
-    APP_HOSTNAME: release.storytelling.greenpeace.org
+    APP_HOSTNAME: www-stage.greenpeace.org
+    APP_HOSTPATH: storytelling
     CLOUDSQL_INSTANCE: planet4-prod
     GCLOUD_CLUSTER: planet4-production
     GOOGLE_PROJECT_ID: planet4-production
@@ -29,6 +30,7 @@ job_environments:
     WP_STATELESS_BUCKET: planet4-storytelling-stateless-release
   production_environment: &production_environment
     APP_HOSTNAME: storytelling.greenpeace.org
+    APP_HOSTPATH:
     CLOUDSQL_INSTANCE: planet4-prod
     GCLOUD_CLUSTER: planet4-production
     GOOGLE_PROJECT_ID: planet4-production

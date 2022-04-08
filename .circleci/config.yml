@@ -415,23 +415,6 @@ jobs:
       - run: echo $SQLPROXY_KEY | base64 -d > key.json
       - run: sql_to_sync_site.sh release
 
-  sync-to-develop:
-    <<: *defaults
-    environment:
-      <<: *common_environment
-      <<: *develop_environment
-    working_directory: /tmp/workspace/src
-    steps:
-      - checkout
-      - attach_workspace:
-          at: /tmp/workspace
-      - run:
-          name: Configure
-          command: |
-            activate-gcloud-account.sh
-      - run: echo $SQLPROXY_KEY | base64 -d > key.json
-      - run: sql_to_sync_site.sh develop
-
   notify-sync:
     <<: *defaults
     environment:
@@ -561,10 +544,6 @@ workflows:
       - create-sync-sql:
           context: org-global
       - sync-to-staging:
-          context: org-global
-          requires:
-            - create-sync-sql
-      - sync-to-develop:
           context: org-global
           requires:
             - create-sync-sql

@@ -1,5 +1,6 @@
 {
-    "require": {
-        "greenpeace/planet4-child-theme-storytelling" : "v0.*"
-    }
+  "require": {
+    "greenpeace/planet4-child-theme-storytelling" : "v0.*",
+    "greenpeace/planet4-master-theme" : "v1.233.0"
+  }
 }
